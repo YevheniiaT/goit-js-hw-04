@@ -1,7 +1,8 @@
 function isEnoughCapacity(products, containerSize) {
   let sum = 0
-    for (let i = 0; i < products.length; i++){
-          sum += products[i]["value"]
+  const productValue = Object.values(products)
+    for (const product of productValue){
+          sum += product
     }
     if (sum <= containerSize) {
         return true
@@ -10,8 +11,6 @@ function isEnoughCapacity(products, containerSize) {
       return false
   }        
 }
-
-
 
 console.log(
   isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
@@ -28,8 +27,6 @@ console.log(
 console.log(
   isEnoughCapacity({ apples: 18, potatos: 5, oranges: 2 }, 7)
 ); // false
-
-
 
 
 // Напиши функцію isEnoughCapacity(products, containerSize), яка обчислює, чи помістяться всі товари в контейнер при пакуванні.
